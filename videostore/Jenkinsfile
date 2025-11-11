@@ -11,7 +11,7 @@ pipeline {
     DOCKER_CTX    = 'videostore'
     MANIFEST_DIR  = 'videostore'
 
-    MK_ROOT       = '/var/jenkins_home/minikube/ps2'
+    MK_ROOT       = '/var/jenkins_home/minikube/videostore'
     MINIKUBE_HOME = "${MK_ROOT}/.minikube"
     KUBECONFIG    = "${MK_ROOT}/.kube/config"
 
@@ -231,7 +231,7 @@ EOSH
           # kube-ps2
           cat > /usr/local/bin/kube-ps2 <<'EOS'
 #!/usr/bin/env sh
-export MK_ROOT="/var/jenkins_home/minikube/ps2"
+export MK_ROOT="/var/jenkins_home/minikube/videostore"
 export MINIKUBE_HOME="${MK_ROOT}/.minikube"
 export KUBECONFIG="${MK_ROOT}/.kube/config"
 unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy
@@ -244,7 +244,7 @@ EOS
           # mk-ps2
           cat > /usr/local/bin/mk-ps2 <<'EOS'
 #!/usr/bin/env sh
-export MK_ROOT="/var/jenkins_home/minikube/ps2"
+export MK_ROOT="/var/jenkins_home/minikube/videostore"
 export MINIKUBE_HOME="${MK_ROOT}/.minikube"
 export KUBECONFIG="${MK_ROOT}/.kube/config"
 unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy
